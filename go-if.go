@@ -16,13 +16,9 @@ func main() {
 		port = "8080"
 	}
 
-	socket := fmt.Sprintf("localhost:%v", port)
+	socket := fmt.Sprintf(":%v", port)
 	log.Println(fmt.Sprintf("Listening on %v...", socket))
-	err := http.ListenAndServe(socket, nil)
-
-	if err != nil {
-		log.Fatal(err)
-	}
+	log.Fatal(http.ListenAndServe(socket, nil))
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -32,8 +28,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, err)
 	}
 
-	fmt.Fprintln(w, host)
-	fmt.Fprintln(w, "")
+	fmt.Fprintln(w, fmt.Sprintf("%v\n", host))
 
 	addrs, err := net.InterfaceAddrs()
 
