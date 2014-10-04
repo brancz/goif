@@ -1,0 +1,12 @@
+[Unit]
+Description=Go webserver returning the hostname and all network inteface addresses in plaintext
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill go-if
+ExecStartPre=-/usr/bin/docker rm go-if
+ExecStartPre=/usr/bin/docker pull flowerpot/go-if
+ExecStart=/usr/bin/docker run -rm --name go-if flowerpot/go-if
+ExecStop=/usr/bin/docker stop go-if
