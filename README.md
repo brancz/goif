@@ -1,4 +1,4 @@
-![http://img.shields.io/badge/Docker-Image-blue.svg](https://registry.hub.docker.com/u/flowerpot/go-if/)
+[![Docker Image](http://img.shields.io/badge/Docker-Image-blue.svg)](https://registry.hub.docker.com/u/flowerpot/go-if/)
 
 GO-IF
 =====
