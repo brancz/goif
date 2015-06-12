@@ -39,4 +39,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	for _, a := range addrs {
 		fmt.Fprintln(w, a)
 	}
+
+	log.Println(fmt.Sprintf("%s %s %s %d", r.Method, r.URL, r.Proto, 200))
 }
