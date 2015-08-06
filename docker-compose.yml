@@ -1,0 +1,7 @@
+web:
+  image: flowerpot/goif
+  ports:
+    - "8080:8080"
+  log_driver: "syslog"
+  log_opt:
+    address: "udp://syslog-server:514"
