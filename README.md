@@ -23,5 +23,5 @@ Even more comfortable using docker-compose
 
 	docker-compose up
 
-> Hint: make sure you change the `syslog-server` hostname placeholder to your
-> desired remote syslog server as well as the port
+> Hint: make sure you uncomment and change the `syslog-server` hostname
+> placeholder to your desired remote syslog server as well as the port

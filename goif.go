@@ -41,5 +41,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, a)
 	}
 
+	fmt.Fprintln(w, fmt.Sprintf("\n%s", os.Getenv("SOME_VALUE")))
+
 	fmt.Println(fmt.Sprintf("timestamp=%s method=%s route=%s protocol=%s status_code=%d", time.Now().Format("2006-01-02T15:04:05"), r.Method, r.URL, r.Proto, 200))
 }
